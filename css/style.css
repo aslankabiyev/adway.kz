@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: "Inter", sans-serif;
 }
@@ -8,6 +9,7 @@ body {
   -webkit-box-shadow: 1px 1px 1px #dddddd;
           box-shadow: 1px 1px 1px #dddddd;
   font-family: "Inter", sans-serif;
+  /* Стиль для анимированного логотипа */
 }
 .navigation .logo {
   font-weight: 600;
@@ -16,6 +18,42 @@ body {
 }
 .navigation .logo img {
   max-width: 200px;
+}
+.navigation .animated-logo {
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.navigation .logo:hover .animated-logo {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+@-webkit-keyframes rotate-once {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+@keyframes rotate-once {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+.navigation .animated-logo {
+  -webkit-animation: none;
+          animation: none;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
 }
 .navigation .menu ul li {
   list-style-type: none;
@@ -36,8 +74,8 @@ body {
   text-align: right;
 }
 .navigation .btn-primary:hover {
-  background-color: #2D6BBF;
-  border-color: #2D6BBF;
+  background-color: #3880e4 !important;
+  border-color: #368aff;
 }
 .navigation .log-in {
   text-align: center;
@@ -141,11 +179,6 @@ footer .copyright-web .web a {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 600px) {
-  .logo {
-    font-size: 24px;
-  }
-}
 /*-----------site-header---------*/
 .site-header {
   color: #fff;
@@ -164,10 +197,16 @@ footer .copyright-web .web a {
 .site-header .site-header-left .logo img {
   max-width: 200px;
 }
-.site-header .site-header-left span {
-  font-size: 24px;
+.site-header .site-header-left h1 {
+  font-size: 22px;
+  font-weight: 600;
+  padding: 10px 10px 10px 10px;
+}
+.site-header .site-header-left p {
+  font-size: 16px;
   font-weight: 500;
-  padding: 5px;
+  padding: 10px;
+  width: 80%;
   clear: both;
 }
 .site-header .site-header-left .tags {
@@ -181,6 +220,9 @@ footer .copyright-web .web a {
   margin-right: 15px;
   border-radius: 5px;
 }
+.site-header .site-header-left .tags .tag-text:hover {
+  background-color: #f0f0f0;
+}
 .site-header .site-header-left .header-finish {
   clear: both;
   margin-bottom: 20px;
@@ -190,13 +232,13 @@ footer .copyright-web .web a {
 }
 .site-header .site-header-right img {
   border-radius: 6px;
-  height: 300px;
+  max-height: 300px;
 }
 
 /**************Search-form*********************/
 .search-form {
   font-family: "Inter", sans-serif;
-  margin: 50px 40px;
+  margin: 50px 0;
 }
 .search-form input {
   background-color: #e9e9e9;
@@ -208,6 +250,9 @@ footer .copyright-web .web a {
   color: #fff;
   width: 150px;
   border-radius: 5px !important;
+}
+.search-form button:hover {
+  background-color: #3880e4;
 }
 
 /**************ABOUT US*********************/
@@ -243,24 +288,224 @@ footer .copyright-web .web a {
 }
 .why-us .why-us-block {
   text-align: center;
-  background-color: #2D6BBF;
+  background: rgb(45, 107, 191);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(45, 107, 191)), color-stop(39%, rgb(45, 107, 191)), to(rgb(20, 78, 157)));
+  background: linear-gradient(180deg, rgb(45, 107, 191) 0%, rgb(45, 107, 191) 39%, rgb(20, 78, 157) 100%);
   color: #fff;
   padding: 20px;
   border-radius: 5px;
   margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 40px 20px;
 }
 .why-us .why-us-block .why-us-icon {
-  background-color: #fff;
+  background-color: #2258a3;
   border-radius: 40px;
   width: 80px;
   height: 80px;
   margin: 0 auto 20px auto;
 }
 .why-us .why-us-block .why-us-icon svg {
-  fill: #ffb700;
+  fill: #031a3b;
   margin-top: 16px;
 }
 .why-us .why-us-block h3 {
-  margin-bottom: 20px;
-  color: #f8e005;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0 auto;
+}
+.why-us .why-us-block .why-us-hr {
+  width: 100px;
+  height: 2px;
+  background-color: #ffffff;
+  margin: 10px auto 20px auto;
+  border: none;
+}
+.why-us .why-us-blocks .col-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.why-us .why-us-blocks .why-us-block {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+/**********contact-us**********/
+.contact-us {
+  font-family: "Inter", sans-serif;
+  background-color: #2D6BBF;
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  height: 200px;
+  margin-bottom: 110px;
+}
+.contact-us p {
+  padding: 50px 20px;
+  font-size: 18px;
+  width: 80%;
+}
+.contact-us input {
+  border: 0px solid #2258a3;
+  background-color: #2D6BBF;
+  border-bottom: 1px solid #fff;
+  width: 80%;
+  margin-right: 50px;
+}
+.contact-us input::-webkit-input-placeholder {
+  color: #fff;
+}
+.contact-us input::-moz-placeholder {
+  color: #fff;
+}
+.contact-us input:-ms-input-placeholder {
+  color: #fff;
+}
+.contact-us input::-ms-input-placeholder {
+  color: #fff;
+}
+.contact-us input::placeholder {
+  color: #fff;
+}
+.contact-us button {
+  background-color: #2D6BBF;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 5px !important;
+  margin-right: 20px;
+}
+.contact-us button:hover {
+  background-color: #3574cc;
+  border: 2px solid #fff;
+}
+
+@media (min-width: 0) and (max-width: 577.98px) {
+  .site-header .site-header-left {
+    background-color: #2D6BBF;
+    border-radius: 6px;
+    padding: 10px 20px;
+    height: 300px;
+  }
+  .site-header .site-header-left h1 {
+    padding: 10px 5px 10px 5px;
+    font-size: 20px;
+    width: 100%;
+  }
+  .site-header .site-header-left p {
+    padding: 5px !important;
+    font-size: 14px;
+  }
+  .site-header .site-header-left .tags {
+    margin: 35px 0 0 0;
+  }
+  .site-header .site-header-left .tags .tag-text {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .site-header .site-header-left {
+    background-color: #2D6BBF;
+    border-radius: 6px;
+    padding: 10px 20px;
+    height: 300px;
+  }
+  .site-header .site-header-left h1 {
+    padding: 10px 5px 10px 5px;
+    font-size: 20px;
+    width: 100%;
+  }
+  .site-header .site-header-left p {
+    padding: 5px !important;
+  }
+  .site-header .site-header-left .tags {
+    margin: 35px 0 0 0;
+  }
+  .site-header .site-header-left .tags .tag-text {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .site-header .site-header-left {
+    background-color: #2D6BBF;
+    border-radius: 6px;
+    padding: 10px 20px;
+    height: 300px;
+  }
+  .site-header .site-header-left h1 {
+    padding: 20px 10px;
+    font-size: 22px;
+  }
+  .site-header .site-header-left p {
+    padding: 5px 10px !important;
+  }
+  .site-header .site-header-left .tags {
+    margin: 35px 10px 0 10px;
+  }
+  .site-header .site-header-left .tags .tag-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .site-header {
+    height: 100%;
+  }
+  .site-header .site-header-left {
+    background-color: #2D6BBF;
+    border-radius: 6px;
+    padding: 10px 20px;
+    height: 215px;
+  }
+  .site-header .site-header-left h1 {
+    padding: 15px 10px;
+    font-size: 18px;
+  }
+  .site-header .site-header-left p {
+    padding: 5px 10px !important;
+    font-size: 15px;
+  }
+  .site-header .site-header-left .tags {
+    margin: 30px 5px 10px 5px;
+  }
+  .site-header .site-header-left .tags .tag-text {
+    font-size: 14px;
+  }
+  .site-header-right {
+    border-radius: 6px;
+  }
+  .site-header-right img {
+    border-radius: 6px;
+    height: 215px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .site-header-left {
+    height: 258px !important;
+  }
+  .site-header-left .tags {
+    margin: 50px 10px 0 10px !important;
+  }
+  .site-header-left .tags .tag-text {
+    font-size: 14px;
+  }
+  .site-header-right {
+    border-radius: 6px;
+  }
+  .site-header-right img {
+    border-radius: 6px;
+    height: 258px;
+  }
 }
