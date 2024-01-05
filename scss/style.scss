@@ -100,6 +100,13 @@ body {
 	font-size: 12px;
 	position: fixed;
 	bottom: 0px;
+    a {
+        color: #fff;
+        text-decoration: none;   
+    }
+    a:hover {
+        color: #fffbc3;
+    }
 }
 
 
@@ -256,6 +263,7 @@ footer{
         padding: 0;
         margin: 0;
         border-radius: 5px;;
+        width: 100%;
     }
     .onas-text {
         
@@ -288,9 +296,8 @@ footer{
         padding: 20px;
         border-radius: 5px;
         margin-bottom: 20px;
-        display: flex;
-        flex-wrap: wrap;
         padding: 40px 20px;
+        height: 440px;
 
         .why-us-icon {
             background-color: #2258a3;
@@ -304,6 +311,7 @@ footer{
             }
         }
         h3 {
+            
             font-size: 18px;
             color: #ffffff;
             font-weight: 600;
@@ -347,6 +355,7 @@ footer{
         border-bottom: 1px solid #fff;
         width: 80%;
         margin-right: 50px;
+        margin: 0 20px;
         
     }
     input::placeholder {
@@ -365,12 +374,53 @@ footer{
     }
 }
 
-@media (min-width: 0) and (max-width: 577.98px) {
+@media (min-width: 0) and (max-width: 499.98px){
     .site-header {
         .site-header-left {
             background-color: #2D6BBF;
             border-radius: 6px;
-            padding: 10px 20px;
+            padding: 30px 20px;
+            height: 430px;
+            h1 {
+                padding: 10px 5px 10px 5px;
+                font-size: 20px;
+                width: 100%;
+            }
+            p {
+                padding: 5px !important;
+                font-size: 14px;
+            }
+            .tags {
+                margin: 35px 0 0 0;
+                .tag-text {
+                    font-size: 12px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .site-header-right {
+            img {
+                display: none;
+            }
+        }
+    }
+    
+    .contact-us {
+        height: 380px;
+    }
+    .why-us {
+        .why-us-block {
+            height: 400px; 
+        }
+    }
+}
+
+@media (min-width: 500px) and (max-width: 575.98px) {
+    .site-header {
+        .site-header-left {
+            background-color: #2D6BBF;
+            border-radius: 6px;
+            padding: 20px 20px;
             height: 300px;
             h1 {
                 padding: 10px 5px 10px 5px;
@@ -388,6 +438,20 @@ footer{
                     margin-bottom: 10px;
                 }
             }
+        }
+        .site-header-right {
+            img {
+                display: none;
+            }
+        }
+    }
+    
+    .contact-us {
+        height: 360px;
+    }
+    .why-us {
+        .why-us-block {
+            height: 350px; 
         }
     }
 }
@@ -416,6 +480,20 @@ footer{
                 }
             }
         }
+        .site-header-right {
+            img {
+                display: none;
+            }
+        }
+    }
+    
+    .contact-us {
+        height: 330px;
+    }
+    .why-us {
+        .why-us-block {
+            height: 330px; 
+        }
     }
 }
 
@@ -440,6 +518,20 @@ footer{
                     margin-bottom: 10px;
                 }
             }
+        }
+        .site-header-right {
+            img {
+                display: none;
+            }
+        }
+    }
+    
+    .contact-us {
+        height: 330px;
+    }
+    .why-us {
+        .why-us-block {
+            height: 330px; 
         }
     }
 }
@@ -477,6 +569,14 @@ footer{
             height: 215px;
         }
     }
+    .contact-us {
+        height: 250px;
+    }
+    .why-us {
+        .why-us-block {
+            height: 360px; 
+        }
+    }
 }
 
 @media (min-width: 1200px) and (max-width: 1399.98px) {
@@ -496,4 +596,13 @@ footer{
             height: 258px;
         }
     }
+    .contact-us {
+        height: 220px;
+    }
+    .why-us {
+        .why-us-block {
+            height: 480px; 
+        }
+    }
+    
 }
